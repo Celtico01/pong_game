@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1yh44s5mvjfm"]
+
+[ext_resource type="Script" path="res://scripts/point_zone_p_2.gd" id="1_fusef"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f5786"]
+a = Vector2(0, -86)
+b = Vector2(0, 92)
+
+[node name="PointZone-P2" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_fusef")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_f5786")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

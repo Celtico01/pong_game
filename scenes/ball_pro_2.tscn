@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://h7lkrlswqbbj"]
+
+[ext_resource type="Script" path="res://scripts/ball_pro_2.gd" id="1_moss8"]
+[ext_resource type="Texture2D" uid="uid://denolq5ux1tle" path="res://assets/sprites/ball_white.png" id="2_a7ro4"]
+[ext_resource type="AudioStream" uid="uid://d0m3aftdi8kjd" path="res://assets/audio/point.mp3" id="3_v6hnk"]
+[ext_resource type="AudioStream" uid="uid://bp7cr0f5fe1lt" path="res://assets/audio/ball_hit_player.mp3" id="4_0ddk3"]
+[ext_resource type="AudioStream" uid="uid://cpqp8n1h6icql" path="res://assets/audio/hit_field.mp3" id="5_bkyts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obtk1"]
+radius = 3.0
+
+[node name="ball_pro_2" type="Area2D"]
+collision_layer = 65
+collision_mask = 33
+script = ExtResource("1_moss8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_obtk1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a7ro4")
+
+[node name="RayCast_Down" type="RayCast2D" parent="."]
+physics_interpolation_mode = 1
+target_position = Vector2(0, 3)
+collision_mask = 10
+collide_with_areas = true
+
+[node name="RayCast_Left" type="RayCast2D" parent="."]
+target_position = Vector2(-3, 0)
+collision_mask = 10
+collide_with_areas = true
+
+[node name="RayCast_Up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -3)
+collision_mask = 10
+collide_with_areas = true
+
+[node name="RayCast_Right" type="RayCast2D" parent="."]
+target_position = Vector2(3, 0)
+collision_mask = 10
+collide_with_areas = true
+
+[node name="Point" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v6hnk")
+
+[node name="H-Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0ddk3")
+
+[node name="H-Wall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bkyts")

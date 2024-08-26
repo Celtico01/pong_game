@@ -1,10 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://qax3dinq5x7y"]
+[gd_scene load_steps=8 format=3 uid="uid://qax3dinq5x7y"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_g6it5"]
 [ext_resource type="PackedScene" uid="uid://d2rlvoj758ysd" path="res://scenes/board.tscn" id="1_hybjw"]
 [ext_resource type="PackedScene" uid="uid://ojhh3pie643" path="res://scenes/camera.tscn" id="2_qkob5"]
+[ext_resource type="FontFile" uid="uid://b1cjkihd4tofe" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vk5jy"]
+[ext_resource type="PackedScene" uid="uid://bqbc8nqjcfpfg" path="res://scenes/player-1.tscn" id="6_t3c1w"]
+[ext_resource type="PackedScene" uid="uid://dwtx2fck1i1l7" path="res://scenes/player_2.tscn" id="8_qi655"]
+[ext_resource type="PackedScene" uid="uid://h7lkrlswqbbj" path="res://scenes/ball_pro_2.tscn" id="9_rvij3"]
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_g6it5")
+
+[node name="Score_p1" type="Label" parent="GameManager"]
+offset_left = -70.0
+offset_top = -90.0
+offset_right = -58.0
+offset_bottom = -82.0
+theme_override_fonts/font = ExtResource("2_vk5jy")
+theme_override_font_sizes/font_size = 8
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Score_p2" type="Label" parent="GameManager"]
+offset_left = 70.0
+offset_top = -90.0
+offset_right = 83.0
+offset_bottom = -80.0
+theme_override_fonts/font = ExtResource("2_vk5jy")
+theme_override_font_sizes/font_size = 8
+text = "0"
 
 [node name="Board" parent="." instance=ExtResource("1_hybjw")]
 
 [node name="Camera" parent="Board" instance=ExtResource("2_qkob5")]
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player-1" parent="Players" instance=ExtResource("6_t3c1w")]
+position = Vector2(-77, 0)
+
+[node name="player-2" parent="Players" instance=ExtResource("8_qi655")]
+position = Vector2(77, 0)
+
+[node name="ball_pro_2" parent="." instance=ExtResource("9_rvij3")]
