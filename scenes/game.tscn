@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwtx2fck1i1l7" path="res://scenes/player_2.tscn" id="8_qi655"]
 [ext_resource type="PackedScene" uid="uid://h7lkrlswqbbj" path="res://scenes/ball_pro_2.tscn" id="9_rvij3"]
 
-[node name="Game" type="Node2D"]
+[node name="Game-PVP" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -46,3 +46,4 @@ position = Vector2(-77, 0)
 position = Vector2(77, 0)
 
 [node name="ball_pro_2" parent="." instance=ExtResource("9_rvij3")]
+unique_name_in_owner = true

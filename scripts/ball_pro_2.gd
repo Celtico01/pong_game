@@ -10,7 +10,7 @@ extends Area2D
 @onready var point: AudioStreamPlayer2D = $Point
 
 
-var SPEED = 80
+var SPEED = 75
 var limite_h_l = -85
 var limite_h_r = 85
 var is_hiden = false

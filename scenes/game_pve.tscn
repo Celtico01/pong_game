@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1aas1iuph2b0"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_j0j27"]
+[ext_resource type="Script" path="res://scripts/game_pve.gd" id="1_jwb4b"]
+[ext_resource type="FontFile" uid="uid://b1cjkihd4tofe" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3r6cd"]
+[ext_resource type="PackedScene" uid="uid://d2rlvoj758ysd" path="res://scenes/board.tscn" id="3_b3cr6"]
+[ext_resource type="PackedScene" uid="uid://ojhh3pie643" path="res://scenes/camera.tscn" id="4_knr7i"]
+[ext_resource type="PackedScene" uid="uid://bqbc8nqjcfpfg" path="res://scenes/player-1.tscn" id="5_jd1ed"]
+[ext_resource type="PackedScene" uid="uid://h7lkrlswqbbj" path="res://scenes/ball_pro_2.tscn" id="7_f2p4f"]
+[ext_resource type="PackedScene" uid="uid://rq5o0u4f5bdk" path="res://scenes/player_2_pve.tscn" id="7_rbrj8"]
+
+[node name="Game-PVE" type="Node2D"]
+script = ExtResource("1_jwb4b")
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_j0j27")
+
+[node name="Score_p1" type="Label" parent="GameManager"]
+offset_left = -70.0
+offset_top = -90.0
+offset_right = -58.0
+offset_bottom = -82.0
+theme_override_fonts/font = ExtResource("2_3r6cd")
+theme_override_font_sizes/font_size = 8
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Score_p2" type="Label" parent="GameManager"]
+offset_left = 70.0
+offset_top = -90.0
+offset_right = 83.0
+offset_bottom = -80.0
+theme_override_fonts/font = ExtResource("2_3r6cd")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Board" parent="." instance=ExtResource("3_b3cr6")]
+
+[node name="Camera" parent="Board" instance=ExtResource("4_knr7i")]
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player-1" parent="Players" instance=ExtResource("5_jd1ed")]
+position = Vector2(-77, 0)
+
+[node name="player-2-pve" parent="Players" instance=ExtResource("7_rbrj8")]
+position = Vector2(77, 0)
+
+[node name="ball_pro_2" parent="." instance=ExtResource("7_f2p4f")]
+unique_name_in_owner = true
