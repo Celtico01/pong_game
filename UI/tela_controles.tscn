@@ -18,33 +18,41 @@ font = ExtResource("1_7rye5")
 
 [node name="tela_controles" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.431
+anchor_top = 0.469
+anchor_right = 0.778
+anchor_bottom = 0.593
+offset_left = -456.512
+offset_top = -295.912
+offset_right = -0.256042
+offset_bottom = -0.264038
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6e6aq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.214
+anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 32.816
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.130772, 0.130772, 0.130772, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.339
 anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -76.0
-offset_right = 248.0
-offset_bottom = 68.0
+anchor_bottom = 0.917
+offset_left = 0.255981
+offset_top = 24.0
+offset_right = 349.0
+offset_bottom = 7.87198
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -110,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -272.0
-offset_right = 72.0
-offset_bottom = -240.0
+offset_left = 24.0
+offset_top = -48.0
+offset_right = 176.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_7rye5")

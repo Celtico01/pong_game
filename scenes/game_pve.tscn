@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1aas1iuph2b0"]
+[gd_scene load_steps=10 format=3 uid="uid://c1aas1iuph2b0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_j0j27"]
 [ext_resource type="Script" path="res://scripts/game_pve.gd" id="1_jwb4b"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bqbc8nqjcfpfg" path="res://scenes/player-1.tscn" id="5_jd1ed"]
 [ext_resource type="PackedScene" uid="uid://h7lkrlswqbbj" path="res://scenes/ball_pro_2.tscn" id="7_f2p4f"]
 [ext_resource type="PackedScene" uid="uid://rq5o0u4f5bdk" path="res://scenes/player_2_pve.tscn" id="7_rbrj8"]
+[ext_resource type="PackedScene" uid="uid://doilgrvsndvd8" path="res://UI/menu.tscn" id="9_mv1w5"]
 
 [node name="Game-PVE" type="Node2D"]
 script = ExtResource("1_jwb4b")
@@ -49,3 +50,7 @@ position = Vector2(77, 0)
 
 [node name="ball_pro_2" parent="." instance=ExtResource("7_f2p4f")]
 unique_name_in_owner = true
+
+[node name="Menu" parent="." instance=ExtResource("9_mv1w5")]
+anchors_preset = 15
+scale = Vector2(0.4, 0.4)

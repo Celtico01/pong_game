@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qax3dinq5x7y"]
+[gd_scene load_steps=9 format=3 uid="uid://qax3dinq5x7y"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_g6it5"]
 [ext_resource type="PackedScene" uid="uid://d2rlvoj758ysd" path="res://scenes/board.tscn" id="1_hybjw"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b1cjkihd4tofe" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vk5jy"]
 [ext_resource type="PackedScene" uid="uid://bqbc8nqjcfpfg" path="res://scenes/player-1.tscn" id="6_t3c1w"]
 [ext_resource type="PackedScene" uid="uid://dwtx2fck1i1l7" path="res://scenes/player_2.tscn" id="8_qi655"]
+[ext_resource type="PackedScene" uid="uid://doilgrvsndvd8" path="res://UI/menu.tscn" id="8_qokco"]
 [ext_resource type="PackedScene" uid="uid://h7lkrlswqbbj" path="res://scenes/ball_pro_2.tscn" id="9_rvij3"]
 
 [node name="Game-PVP" type="Node2D"]
@@ -47,3 +48,12 @@ position = Vector2(77, 0)
 
 [node name="ball_pro_2" parent="." instance=ExtResource("9_rvij3")]
 unique_name_in_owner = true
+
+[node name="Menu" parent="." instance=ExtResource("8_qokco")]
+unique_name_in_owner = true
+anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(0.4, 0.4)

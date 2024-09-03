@@ -1,4 +1,8 @@
 extends Control
+@onready var tela_controles: Control = $tela_controles
+
+func _ready() -> void:
+	tela_controles.visible = false
 
 func _on_pv_p_pressed() -> void:
 	# inicia modo pvp
@@ -13,7 +17,7 @@ func _on_pv_e_pressed() -> void:
 
 func _on_controles_pressed() -> void:
 	# inicia janela dos controles
-	get_tree().change_scene_to_file("res://UI/tela_controles.tscn")
+	tela_controles.visible = true
 
 
 func _on_sair_pressed() -> void:
